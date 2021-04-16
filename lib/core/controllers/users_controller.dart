@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:getx_git_users/core/model/users.dart';
 import 'package:getx_git_users/core/web/request.dart';
@@ -13,7 +15,7 @@ class UsersController extends GetxController {
 
   void _apiGetusersList() async {
     Request().get().then((value) {
-      print(value);
+      print(json.decode(value.body));
     }).catchError((onError) {
       print(onError);
     });
