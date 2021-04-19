@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "146221232325",
+    "project_id": "getxgitusrs",
+    "storage_bucket": "getxgitusrs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146221232325:android:9deee475a070c9a70b40ac",
+        "android_client_info": {
+          "package_name": "com.example.getx_git_users"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146221232325-3k525kmffc6alj14lf05n6qeqie7dfe8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6nwxvzlMbjRWb_p0T0BR-JHVPh0cBaxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146221232325-3k525kmffc6alj14lf05n6qeqie7dfe8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
