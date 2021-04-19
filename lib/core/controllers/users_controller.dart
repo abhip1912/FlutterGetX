@@ -22,16 +22,17 @@ class UsersController extends GetxController {
         barrierDismissible: false,
       ),
     );
-    print("myLog: Fetching the data...");
     Request().get().then((value) {
-      print("myLog: Data Fetched!");
       List<Users> myUsersList = [];
       List resp = json.decode(value.body);
       resp.forEach((element) {
         myUsersList.add(Users.fromJson(element));
       });
       usersList.addAll(myUsersList);
+
+      //Setting the data to firebase
       DBHelper().setData(myUsersList);
+
       Get.back();
     }).catchError((onError) {
       print(onError);

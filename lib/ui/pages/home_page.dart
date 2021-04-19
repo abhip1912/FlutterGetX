@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_git_users/core/controllers/users_controller.dart';
@@ -12,20 +10,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          await Firebase.initializeApp();
-          FirebaseFirestore.instance
-              .collection('users')
-              .snapshots()
-              .listen((data) {
-            data.docs.forEach((element) {
-              print(element['login']);
-            });
-          });
-        },
-        child: Icon(Icons.add),
-      ),
       appBar: AppBar(
         title: Text("Git Users"),
         centerTitle: true,
@@ -37,7 +21,8 @@ class HomePage extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
                 onTap: () {
-                  Get.toNamed(UserDetailPage.routeName);
+                  Get.toNamed(UserDetailPage.routeName,
+                      arguments: _usersController.usersList[index].login);
                 },
                 leading: CircleAvatar(
                   radius: 35,

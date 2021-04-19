@@ -4,8 +4,6 @@ import '../model/users.dart';
 
 class DBHelper {
   void setData(List<Users> users) async {
-    print(
-        "myLog: setData of db_helper is called and received userList is : $users");
     await Firebase.initializeApp();
     users.forEach((user) {
       FirebaseFirestore.instance
