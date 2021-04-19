@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_git_users/core/db/db_helper.dart';
 import 'package:getx_git_users/core/model/users.dart';
 import '../web/request.dart';
 
@@ -29,6 +30,7 @@ class UserController extends GetxController {
       var obj = Users.fromJson(json.decode(value.body));
       user.value = obj;
       Get.back();
+      DBHelper().setData([user.value]);
     }).catchError((error) {
       print(error);
     });

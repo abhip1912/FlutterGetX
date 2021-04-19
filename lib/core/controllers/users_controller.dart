@@ -22,7 +22,7 @@ class UsersController extends GetxController {
         barrierDismissible: false,
       ),
     );
-    Request().get().then((value) {
+    Request(counter: 0).get().then((value) {
       List<Users> myUsersList = [];
       List resp = json.decode(value.body);
       resp.forEach((element) {
