@@ -8,11 +8,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: TextButton(
-        child: Text("Fetch the data"),
-        onPressed: () {
-          print("myLog: Button pressed");
-        },
+      child: Obx(
+        () => ListView.builder(
+          itemCount: _usersController.usersList.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              onTap: () {},
+              leading: CircleAvatar(
+                radius: 35,
+                backgroundImage:
+                    NetworkImage(_usersController.usersList[index].avatarUrl),
+              ),
+              title: Text(_usersController.usersList[index].login),
+              subtitle: Text(
+                  "${_usersController.usersList[index].id} - ${_usersController.usersList[index].type}"),
+            );
+          },
+        ),
       ),
     );
   }
